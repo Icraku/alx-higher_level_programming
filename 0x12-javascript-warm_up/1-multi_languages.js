@@ -1,9 +1,7 @@
 #!/usr/bin/node
+// script that prints odjets in 3 lines.
+const lines = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-const cString = 'C is fun';
-const pyString = 'Python is cool';
-const jsString = 'JavaScript is amazing';
-
-console.log(cString);
-console.log(pyString);
-console.log(jsString);
+lines.forEach(function (line) {
+  console.log(line);
+});

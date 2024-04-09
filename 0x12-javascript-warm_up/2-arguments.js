@@ -1,9 +1,5 @@
 #!/usr/bin/node
-
-if (!process.argv[2]) {
-  console.log('No argument');
-} else if ((process.argv[2]) && (!process.argv[3])) {
-  console.log('Argument found');
-} else {
-  console.log('Arguments found');
-}
+// prints a message depending of the number of arguments passed
+const args = process.argv.slice(2);
+const message = args.length === 0 ? 'No argument' : (args.length === 1 ? 'Argument found' : 'Arguments found');
+console.log(message);

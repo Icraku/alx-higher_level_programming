@@ -1,16 +1,12 @@
 #!/usr/bin/node
+// computes and prints a factorial
 
-function factorial (number) {
-  if (number === 1) {
-    return (1);
-  } else {
-    return (number * factorial(number - 1));
-  }
+function factorial (n) {
+  return ((n === 0 || n === 1) ? 1 : n * factorial(n - 1));
 }
 
-const value = process.argv[2];
-if (isNaN(value)) {
-  console.log('1');
-} else {
-  console.log(factorial(value));
-}
+const args = process.argv.slice(2);
+const arg1 = parseInt(args[0], 10);
+const result = (isNaN(arg1)) ? 1 : factorial(arg1);
+
+console.log(result);

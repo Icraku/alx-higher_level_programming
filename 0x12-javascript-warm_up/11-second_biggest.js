@@ -1,9 +1,14 @@
 #!/usr/bin/node
-if (process.argv.length <= 3) {
+// searches the second biggest integer in the list of arguments.
+
+const args = process.argv.slice(2).map(Number); // Convert arguments to integers
+const numArgs = args.length;
+
+if (numArgs === 0 || numArgs === 1) {
   console.log(0);
 } else {
-  const numberArgs = process.argv.map(Number)
-    .slice(2, process.argv.length)
-    .sort((x, y) => x - y);
-  console.log(numberArgs[numberArgs.length - 2]);
+  const max = Math.max(...args);
+  const secondMax = Math.max(...args.filter(num => num !== max));
+
+  console.log(secondMax);
 }
