@@ -1,6 +1,4 @@
 #!/usr/bin/node
-exports.converter = function (base) {
-  return function (dec) {
-    return dec.toString(base);
-  };
-};
+// converts a number from base 10 to another base passed as argument.
+
+exports.converter = (base) => (num) => num.toString(base);
